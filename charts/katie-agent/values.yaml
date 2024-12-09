@@ -1,0 +1,13 @@
+serviceAccount:
+  create: true
+  annotations: {}
+
+config:
+  endpoint:
+    url: "wss://api.fusionreactor.io/katie-registry/ws"
+  cluster:
+    name: "Default Cluster"
+    role:
+      readOnly: false
+
+image: katie-agent:latest

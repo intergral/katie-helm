@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name}}-katie-config
+data:
+  # Key-value pairs
+  REGISTRY_URL: {{.Values.config.endpoint.url}}
+  API_KEY: {{.Values.config.endpoint.apiKey}}
+  CLUSTER_NAME: {{.Values.config.cluster.name}}

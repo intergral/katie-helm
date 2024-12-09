@@ -1,0 +1,51 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ .Release.Name}}-katie-role-rw
+rules:
+  - apiGroups: [ "*" ]
+    resources: [ "*" ]
+    verbs: [
+      "create",
+      "delete",
+      "deletecollection",
+      "get",
+      "list",
+      "patch",
+      "update",
+      "watch"
+    ]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ .Release.Name}}-katie-role-ro
+rules:
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: [
+      "get",
+      "list",
+      "watch"
+    ]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ .Release.Name}}-katie-cluster-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+{{- if .Values.config.cluster.role.readOnly }}
+  name: {{ .Release.Name}}-katie-role-ro
+  {{- else }}
+  name: {{ .Release.Name}}-katie-role-rw
+{{- end }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ .Release.Name}}-katie-service-account
+    namespace: {{ .Release.Namespace }}

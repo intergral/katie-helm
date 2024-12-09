@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name}}-katie-agent-deployment
+  labels:
+    app: {{ .Release.Name}}-katie-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name}}-katie-agent
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name}}-katie-agent
+      annotations:
+        rollme: {{ randAlphaNum 5 | quote }}
+    spec:
+      serviceAccountName: {{ .Release.Name}}-katie-service-account
+      containers:
+        - name: katie-agent
+          image: {{ .Values.image }}
+          imagePullPolicy: IfNotPresent  # Options: Always, IfNotPresent, Never
+          ports:
+            - containerPort: 3333
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name}}-katie-config
