@@ -65,11 +65,11 @@ resources:
 livenessProbe:
   httpGet:
     path: /status
-    port: http
+    port: 80
 readinessProbe:
   httpGet:
     path: /status
-    port: http
+    port: 80
 
 nodeSelector: {}
 
