@@ -3,7 +3,7 @@ entries:
   katie-agent:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-09T13:22:32.924605727Z"
+    created: "2024-12-13T20:33:15.997756775Z"
     description: Installs the Katie Agent into a Kubernetes cluster
     digest: a411d58d5222404027e617ddea1ac31cfb1de3fc43327cb8a656284663c7b917
     name: katie-agent
@@ -11,4 +11,4 @@ entries:
     urls:
     - katie-agent-0.0.0.tgz
     version: 0.0.0
-generated: "2024-12-09T13:22:32.924254953Z"
+generated: "2024-12-13T20:33:15.997386677Z"
