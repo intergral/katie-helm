@@ -19,9 +19,10 @@ jobs:
       - name: Update Index
         run: |
           cd releases
+          helm package ../charts/katie-agent -d .
           helm repo index .
           git config --global user.email "external@intergral.com"
           git config --global user.name "Intergral"
-          git add index.yaml
+          git add .
           git commit -m "Update chart index"
           git push
