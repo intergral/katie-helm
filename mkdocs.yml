@@ -1,0 +1,25 @@
+repo_name: Katie Helm Charts
+repo_url: https://github.com/intergral/katie-helm
+
+docs_dir: docs_out
+site_dir: _site
+
+site_name: Katie Helm Charts
+site_url: https://intergral.github.io/katie-helm/
+
+copyright: Intergral GmbH 2024
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
