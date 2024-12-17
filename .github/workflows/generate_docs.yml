@@ -34,7 +34,7 @@ jobs:
           ref: main
       - run: pip install helm_mkdocs mkdocs-material
       - run: |
-          helm-mkdocs ./charts/katie -o docs_out/katie
+          helm-mkdocs ./charts/katie-agent -o docs_out/katie-agent
       - run: cp README.md docs_out/index.md
       - run: cp styles.css docs_out/styles.css
       - run: mkdocs build
