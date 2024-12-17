@@ -52,11 +52,13 @@ In this case, two Cluster Roles will be created:  one with read-write privileges
 The read-write version is default but the read-only version can be selected by setting `config.cluster.role.readOnly` to `true`.
 
 The difference is in the verbs allowed to be executed against the cluster.  The read-only version allows only:
+
 - GET
 - LIST
 - WATCH
 
 ... while the read-write version adds:
+
 - CREATE
 - DELETE
 - DELETECOLLECTION
