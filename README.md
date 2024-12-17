@@ -1,13 +1,13 @@
 # Katie - Agent Kubernetes Helm Charts
 
-This project contains the Helm charts required to running the Katie AI Agent for Kubernetes on an existing cluster.
+This project contains the Helm charts required to running the **Katie AI Agent for Kubernetes** on an existing cluster.
 
 # Usage
 
 Prerequisites:
 
-- [Helm](https://helm.sh/)
-- Kubernetes
+- An installation of [Helm](https://helm.sh/)
+- A working connection to your Kubernetes cluster from your environment
 
 Once helm is installed and configured, add the repo as follows:
 
@@ -29,7 +29,7 @@ config:
     name: "Your Cluster Name"
 ```
 
-The key `config.cluster.name` defaults to `Default Cluster` - if this isn't okay for you (perhaps beacuse you have multiple clusters, or which to have a more descriptive cluster name), it can be changed here.  The key `config.endpoint.apiKey` must be supplied or the deployed agent pod will not start (_but see note below_).
+The key `config.cluster.name` defaults to `Default Cluster` - if this isn't okay for you (perhaps beacuse you have multiple clusters, or which to have a more descriptive cluster name), it can be changed here.  The key `config.endpoint.apiKey` must be supplied or the deployed agent pod will not start (_but see 'API Key Alternatives' below_).
 
 Once created, this file can be used alone with the chart to install the agent into the cluster:
 
@@ -67,3 +67,9 @@ The difference is in the verbs allowed to be executed against the cluster.  The 
 
 If you wish to create your own RBAC constellation, set `serviceAccount.create` to `false` and ensure a service account exists prior to deploying.  The name of this account is of the form `RELEASE_NAME-katie-agent`.  So, for example, if your Helm release name was 'production', the name sought for the `serviceAccount` would be `production-katie-agent`.
 
+
+## Auxilliary (Helper) Deployments
+
+### Metrics-Server
+
+If the [Kubernetes Metrics Server](https://kubernetes-sigs.github.io/metrics-server/) is installed, Katie will gain the ability to answer questions relating to memory and CPU usage.
