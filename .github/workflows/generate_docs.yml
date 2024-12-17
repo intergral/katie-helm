@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: master
+          ref: main
       - run: pip install helm_mkdocs mkdocs-material
       - run: |
           helm-mkdocs ./charts/katie -o docs_out/katie
