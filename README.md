@@ -52,16 +52,16 @@ In this case, two Cluster Roles will be created:  one with read-write privileges
 The read-write version is default but the read-only version can be selected by setting `config.cluster.role.readOnly` to `true`.
 
 The difference is in the verbs allowed to be executed against the cluster.  The read-only version allows only:
-* GET
-* LIST
-* WATCH
+- GET
+- LIST
+- WATCH
 
 ... while the read-write version adds:
-* CREATE
-* DELETE
-* DELETECOLLECTION
-* PATCH
-* UPDATE
+- CREATE
+- DELETE
+- DELETECOLLECTION
+- PATCH
+- UPDATE
 
 If you wish to create your own RBAC constellation, set `serviceAccount.create` to `false` and ensure a service account exists prior to deploying.  The name of this account is of the form `RELEASE_NAME-katie-agent`.  So, for example, if your Helm release name was 'production', the name sought for the `serviceAccount` would be `production-katie-agent`.
 
