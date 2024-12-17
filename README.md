@@ -31,7 +31,7 @@ config:
 
 The key `config.cluster.name` defaults to `Default Cluster` - if this isn't okay for you (perhaps beacuse you have multiple clusters, or wish to have a more descriptive cluster name), it can be changed here.  The key `config.endpoint.apiKey` must be supplied or the deployed agent pod will not start (_but see 'API Key Alternatives' below_).
 
-Once created, this file can be used alone with the chart to install the agent into the cluster:
+Once created, this file can be used along with the chart to install the agent into the cluster:
 
 `helm upgrade --install katie --create-namespace --namespace katie katie/katie-agent -f values.yaml`
 
