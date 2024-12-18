@@ -73,3 +73,4 @@ If you wish to create your own RBAC constellation, set `serviceAccount.create` t
 ### Metrics-Server
 
 If the [Kubernetes Metrics Server](https://kubernetes-sigs.github.io/metrics-server/) is installed, Katie will gain the ability to answer questions relating to memory and CPU usage.
+
