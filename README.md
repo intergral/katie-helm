@@ -65,8 +65,7 @@ The difference is in the verbs allowed to be executed against the cluster.  The 
 - PATCH
 - UPDATE
 
-If you wish to create your own RBAC constellation, set `serviceAccount.create` to `false` and ensure a service account exists prior to deploying.  The name of this account is of the form `RELEASE_NAME-katie-agent`.  So, for example, if your Helm release name was 'production', the name sought for the `serviceAccount` would be `production-katie-agent`.
-
+If you wish to create your own RBAC constellation, set `serviceAccount.create` to `false` and `serviceAccount.name` to the name of the SA.  Ensure this service account exists prior to deploying.
 
 ## Auxilliary (Helper) Deployments
 
