@@ -3,6 +3,16 @@ entries:
   katie-agent:
   - apiVersion: v2
     appVersion: main.e4aa4691.v137
+    created: "2025-03-04T15:30:15.293901615Z"
+    description: A Helm chart to install the Katie Agent into Kubernetes
+    digest: f8267c639470a27cd6829b8f22ce24eea54bd072a89adca0369f36b4cc3b8ec2
+    name: katie-agent
+    type: application
+    urls:
+    - https://github.com/intergral/katie-helm/releases/download/katie-agent-0.0.13/katie-agent-0.0.13.tgz
+    version: 0.0.13
+  - apiVersion: v2
+    appVersion: main.e4aa4691.v137
     created: "2025-03-04T11:46:41.346409447Z"
     description: A Helm chart to install the Katie Agent into Kubernetes
     digest: 65037afa549db4897d82d4f1103a4fdb93cc7369a23b7be280ebf2d225b30eed
@@ -81,4 +91,4 @@ entries:
     urls:
     - https://github.com/intergral/katie-helm/releases/download/katie-agent-0.0.5/katie-agent-0.0.5.tgz
     version: 0.0.5
-generated: "2025-03-04T11:46:41.34644349Z"
+generated: "2025-03-04T15:30:15.293935309Z"
