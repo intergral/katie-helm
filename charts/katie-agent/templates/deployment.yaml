@@ -6,6 +6,8 @@ metadata:
     {{- include "katie-agent.labels" . | nindent 4 }}
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       {{- include "katie-agent.selectorLabels" . | nindent 6 }}
