@@ -56,10 +56,10 @@ securityContext: {}
 resources:
   limits:
     cpu: 200m
-    memory: 100Mi
+    memory: 200Mi
   requests:
     cpu: 200m
-    memory: 30Mi
+    memory: 100Mi
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 livenessProbe:
