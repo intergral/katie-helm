@@ -45,12 +45,12 @@ podLabels: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
+securityContext: 
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
   # runAsUser: 1000
 
 resources:
@@ -65,11 +65,11 @@ resources:
 livenessProbe:
   httpGet:
     path: /status
-    port: 80
+    port: 2106
 readinessProbe:
   httpGet:
     path: /status
-    port: 80
+    port: 2106
 
 nodeSelector: {}
 
