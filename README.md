@@ -73,4 +73,4 @@ If you wish to create your own RBAC constellation, set `serviceAccount.create` t
 
 #### RBAC/Read-Only Role and Reporting
 
-When an action is disallowed (by RBAC or by installing using the `readOnly` role, the Agent will make a best-effort attempt to report this back to the caller.  Most LLM implementations will interpret this correctly and report that the agent did not have sufficient privileges to perform the operation. 
+When an action is disallowed (by custom RBAC or by installing using the `readOnly` role) the Agent will make a best-effort attempt to report this back to the caller.  Most LLM implementations will interpret this correctly and report that the agent did not have sufficient privileges to perform the operation. 
