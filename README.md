@@ -10,8 +10,10 @@ Prerequisites:
 - A working connection to your Kubernetes cluster from your environment
 
 Once helm is installed and configured, add the repo as follows:
-
-`helm repo add katie https://intergral.github.io/katie-helm/`
+```
+helm repo add katie https://intergral.github.io/katie-helm/
+helm repo update
+```
 
 You can then run `helm search repo katie` to see the charts.
 
@@ -36,6 +38,8 @@ Once created, this file can be used along with the chart to install the agent in
 `helm upgrade --install katie --create-namespace --namespace katie katie/katie-agent -f values.yaml`
 
 The pod log can then be inspected to ensure a good connection to the server.
+
+If you don't wish to use a `values.yaml` file, you can also set these options on the `helm` command above using the `--set` syntax.
 
 #### API Key Alternatives
 
@@ -67,9 +71,6 @@ The difference is in the verbs allowed to be executed against the cluster.  The 
 
 If you wish to create your own RBAC constellation, set `serviceAccount.create` to `false` and `serviceAccount.name` to the name of the SA.  Ensure this service account exists prior to deploying.
 
-## Auxilliary (Helper) Deployments
+#### RBAC/Read-Only Role and Reporting
 
-### Metrics-Server
-
-If the [Kubernetes Metrics Server](https://kubernetes-sigs.github.io/metrics-server/) is installed, Katie will gain the ability to answer questions relating to memory and CPU usage.
-
+When an action is disallowed (by RBAC or by installing using the `readOnly` role, the Agent will make a best-effort attempt to report this back to the caller.  Most LLM implementations will interpret this correctly and report that the agent did not have sufficient privileges to perform the operation. 
